@@ -7,16 +7,24 @@ import { theme } from '@/src/styles/theme';
 import FilterButtons from '@/src/components/buttons/FilterButtons';
 import Card from '@/src/components/Card';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import SeeAll from '@/src/components/SeeAll';
+import GoalsSection from '@/src/components/GoalsSection';
 
 
 export default function HomeScreen() {
+  const goals = [
+    { id: '1', title: 'New Car' },
+    { id: '2', title: 'Trip to The far far east of the world' },
+    { id: '3', title: 'Charity' },
+  ];
+
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.profileSection}>
         <Image style={styles.profilePicture} source={ProfileIcon} />
         <View style={styles.textContainer}>
           <Text style={textStyles.body}>Spend wisely,</Text>
-          <Text style={textStyles.header}>Omar</Text>
+          <Text style={[textStyles.header, { fontSize: 22 }]}>Omar</Text>
         </View>
       </View>
 
@@ -32,7 +40,7 @@ export default function HomeScreen() {
       <View style={styles.budgetSection}>
         <Card width={'46%'} height={70} backgroundColor={theme.colors.secondary} paddingHorizontal={10} paddingVertical={10}>
           <View style={styles.iconContainer}>
-            <MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8}} />
+            <MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8 }} />
             <Text style={textStyles.body}>Total Spent</Text>
           </View>
           <View>
@@ -49,6 +57,11 @@ export default function HomeScreen() {
           </View>
         </Card>
       </View>
+      <GoalsSection
+        title="My Goals"
+        goals={goals}
+        onSeeAllPress={() => console.log('Navigate to Goals')}
+      />
     </SafeAreaView>
   );
 }

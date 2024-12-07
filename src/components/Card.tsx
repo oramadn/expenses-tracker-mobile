@@ -14,6 +14,7 @@ interface CardProps {
   paddingHorizontal?: number;
   paddingVertical?: number;
   justifyContent?: number;
+  marginLeft?: number;
   style?: ViewStyle;
   children: React.ReactNode;
 }
@@ -31,6 +32,7 @@ const Card: React.FC<CardProps> = ({
   paddingHorizontal = 0,
   paddingVertical=0,
   justifyContent= 'space-between',
+  marginLeft=0,
   style,
   children,
 }) => {
@@ -51,6 +53,7 @@ const Card: React.FC<CardProps> = ({
           paddingHorizontal: paddingHorizontal,
           paddingVertical: paddingVertical,
           justifyContent: justifyContent,
+          marginLeft: marginLeft,
         } as ViewStyle,
         style,
       ]}
