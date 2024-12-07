@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 10
+    paddingHorizontal: 10
   },
 });
 
