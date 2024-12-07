@@ -7,6 +7,7 @@ import { theme } from '@/src/styles/theme';
 import FilterButtons from '@/src/components/buttons/FilterButtons';
 import Card from '@/src/components/Card';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
+import SeeAll from '@/src/components/SeeAll';
 
 
 export default function HomeScreen() {
@@ -16,7 +17,7 @@ export default function HomeScreen() {
         <Image style={styles.profilePicture} source={ProfileIcon} />
         <View style={styles.textContainer}>
           <Text style={textStyles.body}>Spend wisely,</Text>
-          <Text style={textStyles.header}>Omar</Text>
+          <Text style={[textStyles.header, { fontSize: 22 }]}>Omar</Text>
         </View>
       </View>
 
@@ -32,7 +33,7 @@ export default function HomeScreen() {
       <View style={styles.budgetSection}>
         <Card width={'46%'} height={70} backgroundColor={theme.colors.secondary} paddingHorizontal={10} paddingVertical={10}>
           <View style={styles.iconContainer}>
-            <MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8}} />
+            <MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8 }} />
             <Text style={textStyles.body}>Total Spent</Text>
           </View>
           <View>
@@ -48,6 +49,21 @@ export default function HomeScreen() {
             <Text style={textStyles.boldBody}>500.00 JOD</Text>
           </View>
         </Card>
+      </View>
+      <View style={styles.goalsHeader}>
+        <Text style={textStyles.header}>My Goals</Text>
+        <SeeAll
+          onPress={() => console.log('Navigate to Goals see all')}
+          containerStyle={{ marginTop: 5 }}
+        />
+      </View>
+      <View>
+        <ScrollView
+          horizontal
+          contentContainerStyle={styles.scrollViewContent}
+          showsHorizontalScrollIndicator={false}
+        >
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
@@ -94,5 +110,12 @@ const styles = StyleSheet.create({
   iconContainer: {
     flexDirection: 'row',
     alignItems: 'flex-start',
+  },
+  goalsHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    paddingHorizontal: 24,
+    paddingVertical: 8,
   }
 });
