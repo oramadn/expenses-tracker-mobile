@@ -19,4 +19,10 @@ export const textStyles = {
     lineHeight: 22,
     color: theme.colors.textPrimary,
   },
+  boldBody: {
+    fontFamily: 'InriaSans-Bold',
+    fontSize: 16,
+    lineHeight: 22,
+    color: theme.colors.textPrimary,
+  },
 };
