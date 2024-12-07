@@ -8,9 +8,16 @@ import FilterButtons from '@/src/components/buttons/FilterButtons';
 import Card from '@/src/components/Card';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import SeeAll from '@/src/components/SeeAll';
+import GoalsSection from '@/src/components/GoalsSection';
 
 
 export default function HomeScreen() {
+  const goals = [
+    { id: '1', title: 'New Car' },
+    { id: '2', title: 'Trip to The far far east of the world' },
+    { id: '3', title: 'Charity' },
+  ];
+
   return (
     <SafeAreaView style={styles.mainContainer}>
       <View style={styles.profileSection}>
@@ -50,21 +57,11 @@ export default function HomeScreen() {
           </View>
         </Card>
       </View>
-      <View style={styles.goalsHeader}>
-        <Text style={textStyles.header}>My Goals</Text>
-        <SeeAll
-          onPress={() => console.log('Navigate to Goals see all')}
-          containerStyle={{ marginTop: 5 }}
-        />
-      </View>
-      <View>
-        <ScrollView
-          horizontal
-          contentContainerStyle={styles.scrollViewContent}
-          showsHorizontalScrollIndicator={false}
-        >
-        </ScrollView>
-      </View>
+      <GoalsSection
+        title="My Goals"
+        goals={goals}
+        onSeeAllPress={() => console.log('Navigate to Goals')}
+      />
     </SafeAreaView>
   );
 }
@@ -110,12 +107,5 @@ const styles = StyleSheet.create({
   iconContainer: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-  },
-  goalsHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    paddingHorizontal: 24,
-    paddingVertical: 8,
   }
 });
