@@ -5,6 +5,8 @@ import ProfileIcon from '../../../assets/images/icon.png'
 import { textStyles } from '@/src/styles/text_styles';
 import { theme } from '@/src/styles/theme';
 import FilterButtons from '@/src/components/buttons/FilterButtons';
+import Card from '@/src/components/Card';
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 
 
 export default function HomeScreen() {
@@ -24,8 +26,28 @@ export default function HomeScreen() {
           contentContainerStyle={styles.scrollViewContent}
           showsHorizontalScrollIndicator={false}
         >
-        <FilterButtons/>
+          <FilterButtons />
         </ScrollView>
+      </View>
+      <View style={styles.budgetSection}>
+        <Card width={'46%'} height={70} backgroundColor={theme.colors.secondary} paddingHorizontal={10} paddingVertical={10}>
+          <View style={styles.iconContainer}>
+            <MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8}} />
+            <Text style={textStyles.body}>Total Spent</Text>
+          </View>
+          <View>
+            <Text style={textStyles.boldBody}>-1500.00 JOD</Text>
+          </View>
+        </Card>
+        <Card width={'46%'} height={70} backgroundColor={theme.colors.success} paddingHorizontal={10} paddingVertical={10}>
+          <View style={styles.iconContainer}>
+            <Ionicons name="wallet-outline" size={20} style={{ marginRight: 8 }} />
+            <Text style={textStyles.body}>Total Left</Text>
+          </View>
+          <View>
+            <Text style={textStyles.boldBody}>500.00 JOD</Text>
+          </View>
+        </Card>
       </View>
     </SafeAreaView>
   );
@@ -63,4 +85,14 @@ const styles = StyleSheet.create({
     marginTop: 16,
     paddingHorizontal: 14
   },
+  budgetSection: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 24,
+    marginTop: 15
+  },
+  iconContainer: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  }
 });
