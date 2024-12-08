@@ -7,7 +7,7 @@ export default function RootLayout() {
   const [fontsLoaded, setFontsLoaded] = useState(false);
 
   useEffect(() => {
-    async function prepare() {
+    const loadResources = async () => {
       try {
         await SplashScreen.preventAutoHideAsync();
 
@@ -17,17 +17,19 @@ export default function RootLayout() {
         });
 
         setFontsLoaded(true);
-      } catch (e) {
-        console.warn(e);
+      } catch (error) {
+        console.error('Error loading resources:', error);
       }
-    }
+    };
 
-    prepare();
+    loadResources();
   }, []);
 
   useEffect(() => {
     if (fontsLoaded) {
-      SplashScreen.hideAsync();
+      SplashScreen.hideAsync().catch((error) =>
+        console.error('Error hiding splash screen:', error)
+      );
     }
   }, [fontsLoaded]);
 

@@ -1,9 +1,9 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-export default function SettingsScreen() {
+export default function Placeholder1Screen() {
   return (
     <View style={styles.container}>
-      <Text>Settings</Text>
+      <Text>Placeholder2</Text>
     </View>
   );
 }

@@ -1,13 +1,12 @@
 import { StyleSheet, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image, View, Text } from 'react-native';
-import ProfileIcon from '../../../assets/images/icon.png'
+import ProfileIcon from '../../assets/images/icon.png'
 import { textStyles } from '@/src/styles/text_styles';
 import { theme } from '@/src/styles/theme';
 import FilterButtons from '@/src/components/buttons/FilterButtons';
 import Card from '@/src/components/Card';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import SeeAll from '@/src/components/SeeAll';
 import GoalsSection from '@/src/components/GoalsSection';
 
 
@@ -69,6 +68,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
+    backgroundColor: theme.colors.background
   },
   profileSection: {
     flexDirection: 'row',
