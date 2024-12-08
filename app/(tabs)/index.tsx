@@ -7,7 +7,8 @@ import { theme } from '@/src/styles/theme';
 import FilterButtons from '@/src/components/buttons/FilterButtons';
 import Card from '@/src/components/Card';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
-import GoalsSection from '@/src/components/GoalsSection';
+import Goals from '@/src/components/Goals';
+import SpendingOverview from '@/src/components/SpendingOverview';
 
 
 export default function HomeScreen() {
@@ -15,6 +16,36 @@ export default function HomeScreen() {
     { id: '1', title: 'New Car' },
     { id: '2', title: 'Trip to The far far east of the world' },
     { id: '3', title: 'Charity' },
+  ];
+
+  const transactionsData = [
+    {
+      id: '1',
+      icon: 'silverware-variant',
+      title: 'Noodles',
+      subtitle: '24 hours ago',
+      amount: '-1.12 JOD',
+      percentage: '1%',
+      time: '24 hours ago',
+    },
+    {
+      id: '2',
+      icon: 'car',
+      title: 'Car',
+      subtitle: '31 mins ago',
+      amount: '-0.75 JOD',
+      percentage: '1%',
+      time: '31 mins ago',
+    },
+    {
+      id: '3',
+      icon: 'car',
+      title: 'Car',
+      subtitle: '31 mins ago',
+      amount: '-0.75 JOD',
+      percentage: '1%',
+      time: '31 mins ago',
+    }
   ];
 
   return (
@@ -56,11 +87,12 @@ export default function HomeScreen() {
           </View>
         </Card>
       </View>
-      <GoalsSection
+      <Goals
         title="My Goals"
         goals={goals}
         onSeeAllPress={() => console.log('Navigate to Goals')}
       />
+      <SpendingOverview onSeeAllPress={() => console.log('Navigate to Spending')} transactions={transactionsData} />
     </SafeAreaView>
   );
 }

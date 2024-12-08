@@ -23,6 +23,8 @@ interface ButtonProps extends TouchableOpacityProps {
   textSize?: number;
   textWeight?: TextStyle['fontWeight'];
   bold?: boolean;
+  marginRight?: number;
+  style?: ViewStyle;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -39,6 +41,8 @@ const Button: React.FC<ButtonProps> = ({
   textSize,
   textWeight,
   bold = false,
+  marginRight,
+  style,
   ...touchableProps
 }) => {
   const themeTextStyle = textStyles[textVariant];
@@ -58,9 +62,11 @@ const Button: React.FC<ButtonProps> = ({
           width,
           height,
           backgroundColor,
-          borderRadius
+          borderRadius,
+          marginRight,
         },
-        containerStyle
+        containerStyle, 
+        style
       ]}
       onPress={onPress}
     >

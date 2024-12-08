@@ -50,11 +50,11 @@ export default function TabLayout() {
               {...props}
               style={{
                 position: 'absolute',
-                bottom: 35,
+                bottom: 22,
                 left: '50%',
-                transform: [{ translateX: -35 }],
-                width: 70,
-                height: 70,
+                transform: [{ translateX: -33 }],
+                width: 66,
+                height: 66,
                 borderRadius: 40,
                 backgroundColor: theme.colors.primary,
                 justifyContent: 'center',
