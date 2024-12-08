@@ -10,7 +10,7 @@ import {
 import { theme } from '../../styles/theme';
 import { textStyles } from '@/src/styles/text_styles';
 
-type TextVariant = keyof typeof textStyles;
+type TextVariant = keyof ReturnType<typeof textStyles>;
 
 interface ButtonProps extends Omit<TouchableOpacityProps, 'style'> {
   title: string;
@@ -42,12 +42,13 @@ const Button: React.FC<ButtonProps> = ({
     textStyle: customTextStyle
   } = variant;
 
-  const themeTextStyle = textStyles[textVariant];
+  const baseTextStyle = textStyles()[textVariant];
 
   const dynamicTextStyle: TextStyle = {
+    ...baseTextStyle,
     ...(textSize ? { fontSize: textSize } : {}),
-    ...(textWeight ? { fontWeight: textWeight } : { fontWeight: themeTextStyle.fontWeight }),
-    color: textColor || themeTextStyle.color,
+    ...(textColor ? { color: textColor } : {}),
+    ...(textWeight ? { fontWeight: textWeight } : {}),
     ...customTextStyle
   };
 
@@ -65,7 +66,6 @@ const Button: React.FC<ButtonProps> = ({
     >
       <Text
         style={[
-          themeTextStyle,
           dynamicTextStyle,
           style.container
         ]}

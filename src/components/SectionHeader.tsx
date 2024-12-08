@@ -10,9 +10,11 @@ interface SectionHeaderProps {
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ title, onSeeAllPress, containerStyle }) => {
+  const textStyle = textStyles();
+
   return (
     <View style={[styles.headerContainer, containerStyle]}>
-      <Text style={textStyles.header}>{title}</Text>
+      <Text style={textStyle.headerSmall}>{title}</Text>
       <SeeAll onPress={onSeeAllPress} />
     </View>
   );
