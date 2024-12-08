@@ -13,15 +13,16 @@ interface Goal {
 }
 
 interface GoalsProps {
-  title: string;
   goals: Goal[];
   onSeeAllPress: () => void;
 }
 
-const Goals: React.FC<GoalsProps> = ({ title, goals, onSeeAllPress }) => {
+const Goals: React.FC<GoalsProps> = ({ goals, onSeeAllPress }) => {
+  const textStyle = textStyles();
+
   return (
     <View>
-      <SectionHeader title={title} onSeeAllPress={onSeeAllPress} />
+      <SectionHeader title={"My Goals"} onSeeAllPress={onSeeAllPress} />
 
       <ScrollView
         horizontal
@@ -46,7 +47,7 @@ const Goals: React.FC<GoalsProps> = ({ title, goals, onSeeAllPress }) => {
                     <Text
                       numberOfLines={2}
                       ellipsizeMode="tail"
-                      style={[textStyles.boldBody, styles.cardTitle]}
+                      style={[textStyle.boldBodySmall, styles.cardTitle]}
                     >
                       {goal.title}
                     </Text>
@@ -61,9 +62,9 @@ const Goals: React.FC<GoalsProps> = ({ title, goals, onSeeAllPress }) => {
 
                 <View style={styles.cardBottom}>
                   <View style={styles.moneyContainer}>
-                    <Text style={[textStyles.body, { fontSize: 10 }]}>JOD </Text>
-                    <Text style={[textStyles.body, { fontSize: 10 }]}>5000/</Text>
-                    <Text style={[textStyles.body, { fontSize: 10, opacity: 0.5 }]}>10000</Text>
+                    <Text style={[textStyle.body, { fontSize: 10 }]}>JOD </Text>
+                    <Text style={[textStyle.body, { fontSize: 10 }]}>5000/</Text>
+                    <Text style={[textStyle.body, { fontSize: 10, opacity: 0.5 }]}>10000</Text>
                   </View>
                   <ProgressBar progress={0.5} />
                 </View>

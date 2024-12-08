@@ -23,6 +23,8 @@ interface SpendingOverviewProps {
 }
 
 const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, transactions }) => {
+  const textStyle = textStyles();
+
   const [selectedButton, setSelectedButton] = useState<'recent' | 'upcoming'>('recent');
 
   const handleButtonClick = (button: 'recent' | 'upcoming') => {
@@ -101,12 +103,12 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
                           style={{ marginRight: 8 }}
                         />
                         <View style={styles.transactionTextContainer}>
-                          <Text style={textStyles.boldBody}>{transaction.title}</Text>
-                          <Text style={textStyles.body}>{transaction.time}</Text>
+                          <Text style={textStyle.boldBody}>{transaction.title}</Text>
+                          <Text style={textStyle.body}>{transaction.time}</Text>
                         </View>
                         <View style={styles.transactionAmountContainer}>
-                          <Text style={textStyles.boldBody}>{transaction.amount}</Text>
-                          <Text style={textStyles.body}>{transaction.percentage}</Text>
+                          <Text style={textStyle.boldBody}>{transaction.amount}</Text>
+                          <Text style={textStyle.body}>{transaction.percentage}</Text>
                         </View>
                       </View>
                     ))}

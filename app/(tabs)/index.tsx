@@ -12,6 +12,8 @@ import SpendingOverview from '@/src/components/SpendingOverview';
 
 
 export default function HomeScreen() {
+  const textStyle = textStyles();
+
   const goals = [
     { id: '1', title: 'New Car' },
     { id: '2', title: 'Trip to The far far east of the world' },
@@ -53,8 +55,8 @@ export default function HomeScreen() {
       <View style={styles.profileSection}>
         <Image style={styles.profilePicture} source={ProfileIcon} />
         <View style={styles.textContainer}>
-          <Text style={textStyles.body}>Spend wisely,</Text>
-          <Text style={[textStyles.header, { fontSize: 22 }]}>Omar</Text>
+          <Text style={textStyle.body}>Spend wisely,</Text>
+          <Text style={[textStyle.header, { fontSize: 22 }]}>Omar</Text>
         </View>
       </View>
 
@@ -71,24 +73,23 @@ export default function HomeScreen() {
         <Card width={'46%'} height={70} backgroundColor={theme.colors.secondary} paddingHorizontal={10} paddingVertical={10}>
           <View style={styles.iconContainer}>
             <MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8 }} />
-            <Text style={textStyles.body}>Total Spent</Text>
+            <Text style={[textStyle.boldBodySmall, {marginTop: 4}]}>Total Spent</Text>
           </View>
           <View>
-            <Text style={textStyles.boldBody}>-1500.00 JOD</Text>
+            <Text style={textStyle.headerSmall}>-1500.00 JOD</Text>
           </View>
         </Card>
         <Card width={'46%'} height={70} backgroundColor={theme.colors.success} paddingHorizontal={10} paddingVertical={10}>
           <View style={styles.iconContainer}>
-            <Ionicons name="wallet-outline" size={20} style={{ marginRight: 8 }} />
-            <Text style={textStyles.body}>Total Left</Text>
+            <Ionicons name="wallet-outline" size={20} style={{ marginRight: 8 , marginTop: 2}} />
+            <Text style={[textStyle.boldBodySmall, {marginTop: 4}]}>Total Left</Text>
           </View>
           <View>
-            <Text style={textStyles.boldBody}>500.00 JOD</Text>
+            <Text style={textStyle.headerSmall}>500.00 JOD</Text>
           </View>
         </Card>
       </View>
       <Goals
-        title="My Goals"
         goals={goals}
         onSeeAllPress={() => console.log('Navigate to Goals')}
       />
