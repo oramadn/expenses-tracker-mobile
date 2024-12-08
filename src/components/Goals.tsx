@@ -12,13 +12,13 @@ interface Goal {
   title: string;
 }
 
-interface GoalsSectionProps {
+interface GoalsProps {
   title: string;
   goals: Goal[];
   onSeeAllPress: () => void;
 }
 
-const GoalsSection: React.FC<GoalsSectionProps> = ({ title, goals, onSeeAllPress }) => {
+const Goals: React.FC<GoalsProps> = ({ title, goals, onSeeAllPress }) => {
   return (
     <View>
       <SectionHeader title={title} onSeeAllPress={onSeeAllPress} />
@@ -43,22 +43,22 @@ const GoalsSection: React.FC<GoalsSectionProps> = ({ title, goals, onSeeAllPress
               <View style={styles.goalCard}>
                 <View style={styles.cardHeader}>
                   <View style={styles.titleContainer}>
-                    <Text 
-                      numberOfLines={2} 
+                    <Text
+                      numberOfLines={2}
                       ellipsizeMode="tail"
                       style={[textStyles.boldBody, styles.cardTitle]}
                     >
                       {goal.title}
                     </Text>
                   </View>
-                  <MaterialCommunityIcons 
-                    name="dots-horizontal" 
-                    size={20} 
+                  <MaterialCommunityIcons
+                    name="dots-horizontal"
+                    size={20}
                     style={styles.menuIcon}
                     onPress={() => console.log(`Navigate to Goal ${index} More`)}
                   />
                 </View>
-                
+
                 <View style={styles.cardBottom}>
                   <View style={styles.moneyContainer}>
                     <Text style={[textStyles.body, { fontSize: 10 }]}>JOD </Text>
@@ -122,4 +122,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default GoalsSection;
+export default Goals;

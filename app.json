@@ -43,6 +43,7 @@
         "projectId": "5f63d11c-4383-47f5-a1e1-1ef22e615c62"
       }
     },
-    "assets": ["assets/fonts/inria-sans.bold.ttf", "assets/fonts/inria-sans.regular.ttf"]
+    "assets": ["assets/fonts/inria-sans.bold.ttf", "assets/fonts/inria-sans.regular.ttf"],
+    "backgroundColor": "#FBF8EF"
   }
 }

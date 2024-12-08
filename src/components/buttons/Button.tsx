@@ -10,43 +10,45 @@ import {
 import { theme } from '../../styles/theme';
 import { textStyles } from '@/src/styles/text_styles';
 
-interface ButtonProps extends TouchableOpacityProps {
+type TextVariant = keyof typeof textStyles;
+
+interface ButtonProps extends Omit<TouchableOpacityProps, 'style'> {
   title: string;
-  width?: number;
-  height?: number;
-  backgroundColor?: string;
-  textColor?: string;
-  borderRadius?: number;
-  containerStyle?: ViewStyle;
-  textStyle?: TextStyle;
-  textVariant?: keyof typeof textStyles;
-  textSize?: number;
-  textWeight?: TextStyle['fontWeight'];
-  bold?: boolean;
+  variant?: {
+    size?: number;
+    color?: string;
+    weight?: TextStyle['fontWeight'];
+    textStyle?: TextStyle;
+  };
+  style?: {
+    container?: ViewStyle;
+    touchable?: ViewStyle;
+  };
+  textVariant?: TextVariant;
 }
 
 const Button: React.FC<ButtonProps> = ({
   title,
   onPress,
-  width = 200,
-  height = 50,
-  backgroundColor = theme.colors.secondary,
-  textColor,
-  borderRadius = 8,
-  containerStyle = {},
-  textStyle = {},
+  variant = {},
+  style = {},
   textVariant = 'body',
-  textSize,
-  textWeight,
-  bold = false,
   ...touchableProps
 }) => {
+  const {
+    size: textSize,
+    color: textColor,
+    weight: textWeight,
+    textStyle: customTextStyle
+  } = variant;
+
   const themeTextStyle = textStyles[textVariant];
 
   const dynamicTextStyle: TextStyle = {
     ...(textSize ? { fontSize: textSize } : {}),
-    ...(bold ? { fontWeight: 'bold' } : { fontWeight: themeTextStyle.fontWeight }),
-    ...(textWeight ? { fontWeight: textWeight } : {})
+    ...(textWeight ? { fontWeight: textWeight } : { fontWeight: themeTextStyle.fontWeight }),
+    color: textColor || themeTextStyle.color,
+    ...customTextStyle
   };
 
   return (
@@ -54,13 +56,10 @@ const Button: React.FC<ButtonProps> = ({
       {...touchableProps}
       style={[
         styles.button,
+        style.touchable,
         {
-          width,
-          height,
-          backgroundColor,
-          borderRadius
-        },
-        containerStyle
+          backgroundColor: variant.color || theme.colors.secondary,
+        }
       ]}
       onPress={onPress}
     >
@@ -68,8 +67,7 @@ const Button: React.FC<ButtonProps> = ({
         style={[
           themeTextStyle,
           dynamicTextStyle,
-          { color: textColor || themeTextStyle.color },
-          textStyle
+          style.container
         ]}
       >
         {title}
@@ -80,10 +78,13 @@ const Button: React.FC<ButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
+    width: 200,
+    height: 50,
+    borderRadius: 8,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    paddingHorizontal: 12,
+    paddingHorizontal: 8,
   }
 });
 

@@ -7,41 +7,71 @@ const FilterButtons: React.FC = () => {
     {
       title: "All",
       textVariant: 'header',
-      width: 80,
-      height: 40,
-      textSize: 18,
+      style: {
+        touchable: {
+          width: 80,
+          height: 40,
+        }
+      },
+      variant: {
+        size: 18
+      },
       onPress: () => console.log('All pressed')
     },
     {
       title: "Today",
       textVariant: 'header',
-      width: 80,
-      height: 40,
-      textSize: 18,
+      style: {
+        touchable: {
+          width: 80,
+          height: 40,
+        }
+      },
+      variant: {
+        size: 18
+      },
       onPress: () => console.log('Button 2 pressed')
     },
     {
       title: "Week",
       textVariant: 'header',
-      width: 80,
-      height: 40,
-      textSize: 18,
+      style: {
+        touchable: {
+          width: 80,
+          height: 40,
+        }
+      },
+      variant: {
+        size: 18
+      },
       onPress: () => console.log('Button 3 pressed')
     },
     {
       title: "Month",
       textVariant: 'header',
-      width: 80,
-      height: 40,
-      textSize: 18,
+      style: {
+        touchable: {
+          width: 80,
+          height: 40,
+        }
+      },
+      variant: {
+        size: 18
+      },
       onPress: () => console.log('Button 4 pressed')
     },
     {
       title: "Year",
       textVariant: 'header',
-      width: 80,
-      height: 40,
-      textSize: 18,
+      style: {
+        touchable: {
+          width: 80,
+          height: 40,
+        }
+      },
+      variant: {
+        size: 18
+      },
       onPress: () => console.log('Button 5 pressed')
     }
   ];
@@ -68,7 +98,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginLeft: 10
+    paddingHorizontal: 10
   },
 });
 
