@@ -36,7 +36,7 @@ const Goals: React.FC<GoalsProps> = ({ goals, onSeeAllPress }) => {
               key={goal.id}
               width={143}
               height={96}
-              backgroundColor={theme.colors.secondary}
+              backgroundColor={theme.colors.background.default}
               marginLeft={index > 0 ? 24 : 0}
               paddingHorizontal={10}
               paddingVertical={10}

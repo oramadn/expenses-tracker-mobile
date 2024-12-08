@@ -9,7 +9,7 @@ export default function TabLayout() {
       screenOptions={{
         tabBarStyle: {
           height: 80,
-          backgroundColor: theme.colors.background,
+          backgroundColor: theme.colors.background.muted,
         },
         tabBarLabelStyle: {
           fontSize: 12,
@@ -17,7 +17,7 @@ export default function TabLayout() {
         tabBarItemStyle: {
           transform: [{ translateY: 12 }],
         },
-        tabBarActiveTintColor: theme.colors.primary,
+        tabBarActiveTintColor: theme.colors.primary.base,
         tabBarInactiveTintColor: '#999',
         headerShown: false,
       }}
@@ -56,7 +56,7 @@ export default function TabLayout() {
                 width: 66,
                 height: 66,
                 borderRadius: 40,
-                backgroundColor: theme.colors.primary,
+                backgroundColor: theme.colors.primary.base,
                 justifyContent: 'center',
                 alignItems: 'center',
               }}
