@@ -5,7 +5,7 @@ import ProfileIcon from '../../assets/images/icon.png'
 import { textStyles } from '@/src/styles/text_styles';
 import { theme } from '@/src/styles/theme';
 import FilterButtons from '@/src/components/buttons/FilterButtons';
-import Card from '@/src/components/Card';
+import BudgetCard from '@/src/components/BudgetCard';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import Goals from '@/src/components/Goals';
 import SpendingOverview from '@/src/components/SpendingOverview';
@@ -70,24 +70,18 @@ export default function HomeScreen() {
         </ScrollView>
       </View>
       <View style={styles.budgetSection}>
-        <Card width={'46%'} height={70} backgroundColor={theme.colors.secondary} paddingHorizontal={10} paddingVertical={10}>
-          <View style={styles.iconContainer}>
-            <MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8 }} />
-            <Text style={[textStyle.boldBodySmall, {marginTop: 4}]}>Total Spent</Text>
-          </View>
-          <View>
-            <Text style={textStyle.headerSmall}>-1500.00 JOD</Text>
-          </View>
-        </Card>
-        <Card width={'46%'} height={70} backgroundColor={theme.colors.success} paddingHorizontal={10} paddingVertical={10}>
-          <View style={styles.iconContainer}>
-            <Ionicons name="wallet-outline" size={20} style={{ marginRight: 8 , marginTop: 2}} />
-            <Text style={[textStyle.boldBodySmall, {marginTop: 4}]}>Total Left</Text>
-          </View>
-          <View>
-            <Text style={textStyle.headerSmall}>500.00 JOD</Text>
-          </View>
-        </Card>
+        <BudgetCard
+          icon={<MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8 }} />}
+          title="Total Spent"
+          value="-1500.00 JOD"
+          backgroundColor={theme.colors.secondary}
+        />
+        <BudgetCard
+          icon={<Ionicons name="wallet-outline" size={20} style={{ marginRight: 8, marginTop: 2 }} />}
+          title="Total Left"
+          value="500.00 JOD"
+          backgroundColor={theme.colors.success}
+        />
       </View>
       <Goals
         goals={goals}

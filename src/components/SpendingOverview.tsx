@@ -83,7 +83,7 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
 
             <View style={styles.transactionWrapper}>
               <Card
-                height={180}
+                height={190}
                 backgroundColor={theme.colors.background}
                 paddingHorizontal={16}
                 paddingVertical={16}
