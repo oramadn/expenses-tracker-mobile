@@ -58,9 +58,6 @@ const Button: React.FC<ButtonProps> = ({
       style={[
         styles.button,
         style.touchable,
-        {
-          backgroundColor: variant.color || theme.colors.secondary,
-        }
       ]}
       onPress={onPress}
     >
@@ -81,6 +78,7 @@ const styles = StyleSheet.create({
     width: 200,
     height: 50,
     borderRadius: 8,
+    backgroundColor: theme.colors.background.default,
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',

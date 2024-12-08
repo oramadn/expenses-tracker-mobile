@@ -38,7 +38,7 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
         <Card
           width="100%"
           height={260}
-          backgroundColor={theme.colors.secondary}
+          backgroundColor={theme.colors.background.default}
           paddingVertical={10}
           paddingHorizontal={10}
         >
@@ -48,18 +48,20 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
               borderRadius={30}
               shadowOpacity={0}
               shadowColor="#FFFFFF"
-              backgroundColor={theme.colors.background}
+              backgroundColor={theme.colors.background.muted}
             >
               <View style={styles.buttonWrapper}>
                 <Button
                   style={{
                     touchable: {
                       height: 40,
-                      width: 120,
+                      width: 124,
                       borderRadius: 30,
                       marginRight: 10,
-                      backgroundColor: selectedButton === 'recent' ? theme.colors.secondary : theme.colors.background,
-                    }
+                      backgroundColor: selectedButton === 'recent'
+                      ? theme.colors.background.default
+                      : theme.colors.background.muted,
+                    },
                   }}
                   title="Recent"
                   textVariant="boldBody"
@@ -69,10 +71,12 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
                   style={{
                     touchable: {
                       height: 40,
-                      width: 120,
+                      width: 124,
                       borderRadius: 30,
-                      backgroundColor: selectedButton === 'upcoming' ? theme.colors.secondary : theme.colors.background,
-                    }
+                      backgroundColor: selectedButton === 'upcoming'
+                      ? theme.colors.background.default
+                      : theme.colors.background.muted,
+                    },
                   }}
                   title="Upcoming"
                   textVariant="boldBody"
@@ -81,13 +85,8 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
               </View>
             </Card>
 
-            <View style={styles.transactionWrapper}>
-              <Card
-                height={190}
-                backgroundColor={theme.colors.background}
-                paddingHorizontal={16}
-                paddingVertical={16}
-              >
+            <View>
+              <View style={styles.listWrapper}>
                 <ScrollView
                   style={styles.scrollView}
                   contentContainerStyle={styles.scrollViewContent}
@@ -114,7 +113,7 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
                     ))}
                   </View>
                 </ScrollView>
-              </Card>
+              </View>
             </View>
           </View>
         </Card>
@@ -133,11 +132,14 @@ const styles = StyleSheet.create({
   },
   buttonWrapper: {
     flexDirection: 'row',
-    paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingHorizontal: 7,
+    paddingVertical: 5
   },
-  transactionWrapper: {
-    marginTop: 12,
+  listWrapper: {
+    height: 190,
+    backgroundColor: theme.colors.background.default,
+    paddingVertical: 10,
+    paddingHorizontal: 16
   },
   scrollView: {
     flex: 1,
@@ -151,7 +153,7 @@ const styles = StyleSheet.create({
   transactionItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   transactionTextContainer: {
     flex: 1,

@@ -11,6 +11,7 @@ const FilterButtons: React.FC = () => {
         touchable: {
           width: 80,
           height: 40,
+          borderRadius: 20
         }
       },
       variant: {
@@ -25,6 +26,7 @@ const FilterButtons: React.FC = () => {
         touchable: {
           width: 80,
           height: 40,
+          borderRadius: 20
         }
       },
       variant: {
@@ -39,6 +41,7 @@ const FilterButtons: React.FC = () => {
         touchable: {
           width: 80,
           height: 40,
+          borderRadius: 20
         }
       },
       variant: {
@@ -53,6 +56,7 @@ const FilterButtons: React.FC = () => {
         touchable: {
           width: 80,
           height: 40,
+          borderRadius: 20
         }
       },
       variant: {
@@ -67,6 +71,7 @@ const FilterButtons: React.FC = () => {
         touchable: {
           width: 80,
           height: 40,
+          borderRadius: 20
         }
       },
       variant: {

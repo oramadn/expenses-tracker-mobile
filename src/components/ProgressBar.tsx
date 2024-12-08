@@ -14,7 +14,7 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   progress = 0.5,
   height = 6,
   backgroundColor = '#FFFFFF',
-  progressColor = theme.colors.primary,
+  progressColor = theme.colors.primary.base,
   style,
 }) => {
   return (

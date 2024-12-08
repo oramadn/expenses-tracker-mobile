@@ -74,13 +74,13 @@ export default function HomeScreen() {
           icon={<MaterialCommunityIcons name="hand-coin-outline" size={20} style={{ marginRight: 8 }} />}
           title="Total Spent"
           value="-1500.00 JOD"
-          backgroundColor={theme.colors.secondary}
+          backgroundColor={theme.colors.background.default}
         />
         <BudgetCard
           icon={<Ionicons name="wallet-outline" size={20} style={{ marginRight: 8, marginTop: 2 }} />}
           title="Total Left"
           value="500.00 JOD"
-          backgroundColor={theme.colors.success}
+          backgroundColor={theme.colors.background.default}
         />
       </View>
       <Goals
@@ -95,7 +95,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   mainContainer: {
     flex: 1,
-    backgroundColor: theme.colors.background
+    backgroundColor: theme.colors.background.muted
   },
   profileSection: {
     flexDirection: 'row',
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 40,
-    borderColor: theme.colors.primary,
+    borderColor: theme.colors.primary.base,
     borderWidth: 2,
   },
   textContainer: {
