@@ -15,7 +15,7 @@ const BudgetCard: React.FC<BudgetCardProps> = ({ icon, title, value, backgroundC
   <Card width="46%" height={70} backgroundColor={backgroundColor} paddingHorizontal={10} paddingVertical={10}>
     <View style={styles.iconContainer}>
       {icon}
-      <Text style={[textStyles().boldBodySmall, { marginTop: 4 }]}>{title}</Text>
+      <Text style={[textStyles().bodySmall, { marginTop: 4 }]}>{title}</Text>
     </View>
     <View>
       <Text style={textStyles().boldBody}>{value}</Text>
