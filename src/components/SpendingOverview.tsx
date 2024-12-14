@@ -102,12 +102,12 @@ const SpendingOverview: React.FC<SpendingOverviewProps> = ({ onSeeAllPress, tran
                           style={{ marginRight: 8 }}
                         />
                         <View style={styles.transactionTextContainer}>
-                          <Text style={textStyle.boldBody}>{transaction.title}</Text>
-                          <Text style={textStyle.body}>{transaction.time}</Text>
+                          <Text style={textStyle.boldBodySmall}>{transaction.title}</Text>
+                          <Text style={textStyle.bodySmall}>{transaction.time}</Text>
                         </View>
                         <View style={styles.transactionAmountContainer}>
-                          <Text style={textStyle.boldBody}>{transaction.amount}</Text>
-                          <Text style={textStyle.body}>{transaction.percentage}</Text>
+                          <Text style={textStyle.boldBodySmall}>{transaction.amount}</Text>
+                          <Text style={textStyle.bodySmall}>{transaction.percentage}</Text>
                         </View>
                       </View>
                     ))}

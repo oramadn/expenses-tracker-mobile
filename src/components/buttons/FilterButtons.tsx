@@ -6,76 +6,61 @@ const FilterButtons: React.FC = () => {
   const buttonConfigs = [
     {
       title: "All",
-      textVariant: 'header',
+      textVariant: 'boldBody',
       style: {
         touchable: {
           width: 80,
           height: 40,
           borderRadius: 20
         }
-      },
-      variant: {
-        size: 18
       },
       onPress: () => console.log('All pressed')
     },
     {
       title: "Today",
-      textVariant: 'header',
+      textVariant: 'boldBody',
       style: {
         touchable: {
           width: 80,
           height: 40,
           borderRadius: 20
         }
-      },
-      variant: {
-        size: 18
       },
       onPress: () => console.log('Button 2 pressed')
     },
     {
       title: "Week",
-      textVariant: 'header',
+      textVariant: 'boldBody',
       style: {
         touchable: {
           width: 80,
           height: 40,
           borderRadius: 20
         }
-      },
-      variant: {
-        size: 18
       },
       onPress: () => console.log('Button 3 pressed')
     },
     {
       title: "Month",
-      textVariant: 'header',
+      textVariant: 'boldBody',
       style: {
         touchable: {
           width: 80,
           height: 40,
           borderRadius: 20
         }
-      },
-      variant: {
-        size: 18
       },
       onPress: () => console.log('Button 4 pressed')
     },
     {
       title: "Year",
-      textVariant: 'header',
+      textVariant: 'boldBody',
       style: {
         touchable: {
           width: 80,
           height: 40,
           borderRadius: 20
         }
-      },
-      variant: {
-        size: 18
       },
       onPress: () => console.log('Button 5 pressed')
     }
