@@ -1,13 +1,15 @@
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Ionicons from '@expo/vector-icons/Ionicons';
-import { colors } from '@/theme/colors';
 import HomeHeader from '@/components/HomeHeader';
+import BudgetOverview from '@/components/BudgetOverview';
+import UpcomingExpenses from '@/components/UpcomingExpenses';
 
 export default function Home() {
   return (
-    <SafeAreaView className='flex-1 bg-background p-4'>
-      <HomeHeader/>
+    <SafeAreaView className='flex-1 bg-background pt-4 pt-4 pl-6 pr-6'>
+      <HomeHeader />
+      <BudgetOverview />
+      <UpcomingExpenses />
     </SafeAreaView>
   );
 }
