@@ -1,4 +1,3 @@
-import { View, Text, TouchableOpacity, ScrollView, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeHeader from '@/components/HomeHeader';
 import BudgetOverview from '@/components/BudgetOverview';
