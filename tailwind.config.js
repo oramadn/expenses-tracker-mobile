@@ -13,9 +13,6 @@ module.exports = {
         background: colors.background,
         text: colors.text,
       },
-      // fontFamily: {
-
-      // },
       fontSize: {
         xs: ['12px', { lineHeight: '16px' }],
         sm: ['14px', { lineHeight: '18px' }],
