@@ -1,8 +1,6 @@
-import { SafeAreaView, View, Text, TouchableOpacity, ScrollView, Platform } from "react-native";
+import { SafeAreaView, View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { colors } from "@/theme/colors";
 import RecentTransactionCard from "./RecentTransactionCard";
-
-const TAB_BAR_HEIGHT = Platform.OS === 'ios' ? 49 : 56;
 
 export default function RecentTransactions() {
   const cardsData = [
@@ -22,10 +20,11 @@ export default function RecentTransactions() {
       </View>
       <ScrollView 
         className='mt-2 flex-1' 
+        showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           paddingHorizontal: 16,
           paddingVertical: 16,
-          paddingBottom: TAB_BAR_HEIGHT + 8,
+          paddingBottom: 64,
           gap: 12,
           backgroundColor: colors.secondary,
           borderRadius: 20,

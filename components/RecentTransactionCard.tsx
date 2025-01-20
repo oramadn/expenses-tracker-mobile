@@ -1,4 +1,4 @@
-import { ScrollView, View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { getCategoryIcon, Category } from '../constants/categoryIcons';
 import { colors } from "@/theme/colors";
 
