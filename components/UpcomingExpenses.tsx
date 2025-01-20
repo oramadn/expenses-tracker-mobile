@@ -3,9 +3,9 @@ import UpcomingExpenseCard from './UpcomingExpenseCard';
 
 export default function UpcomingExpenses() {
   const cardsData = [
-    { expenseName: 'Gas', expenseAmount: '415', category: 'gas' as const },
-    { expenseName: 'Groceries', expenseAmount: '220', category: 'groceries' as const },
-    { expenseName: 'Internet Bill', expenseAmount: '150', category: 'internet' as const },
+    { expenseName: 'Gas', expenseAmount: '415', category: 'gas' as const, expenseDate: 'Tomorrow' },
+    { expenseName: 'Groceries', expenseAmount: '220', category: 'groceries' as const, expenseDate: 'On Wednesday' },
+    { expenseName: 'Internet Bill', expenseAmount: '150', category: 'internet' as const, expenseDate: '21 Oct' },
   ];
 
   return (
@@ -36,6 +36,7 @@ export default function UpcomingExpenses() {
               key={index}
               expenseName={expense.expenseName}
               expenseAmount={expense.expenseAmount}
+              expenseDate = {expense.expenseDate}
               category={expense.category}
             />
           ))
