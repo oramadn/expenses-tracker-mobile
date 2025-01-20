@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, ScrollView } from 'react-native';
-import ExpenseCard from './ExpenseCard';
+import UpcomingExpenseCard from './UpcomingExpenseCard';
 
 export default function UpcomingExpenses() {
   const cardsData = [
@@ -9,7 +9,7 @@ export default function UpcomingExpenses() {
   ];
 
   return (
-    <View className='flex mt-4'>
+    <View className='flex mt-3'>
       <View className='flex-row justify-between items-center'>
         <Text className='text-white text-lg font-bold'>Upcoming Expenses</Text>
         <TouchableOpacity>
@@ -32,7 +32,7 @@ export default function UpcomingExpenses() {
           </View>
         ) : (
           cardsData.map((expense, index) => (
-            <ExpenseCard
+            <UpcomingExpenseCard
               key={index}
               expenseName={expense.expenseName}
               expenseAmount={expense.expenseAmount}

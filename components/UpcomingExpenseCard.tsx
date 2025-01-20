@@ -1,15 +1,15 @@
 import { View, Text } from 'react-native';
-import { getCategoryIcon, Category} from '../constants/categoryIcons';
+import { getCategoryIcon, Category } from '../constants/categoryIcons';
 import { colors } from '@/theme/colors';
 import { Feather } from '@expo/vector-icons';
 
-interface ExpenseCardProps {
+interface UpcomingExpenseCardProps {
   expenseName: string;
   expenseAmount: string;
   category: Category;
 }
 
-const ExpenseCard: React.FC<ExpenseCardProps> = ({ expenseName, expenseAmount, category }) => {
+const UpcomingExpenseCard: React.FC<UpcomingExpenseCardProps> = ({ expenseName, expenseAmount, category }) => {
   const Icon = getCategoryIcon(category);
 
   return (
@@ -36,4 +36,4 @@ const ExpenseCard: React.FC<ExpenseCardProps> = ({ expenseName, expenseAmount, c
   );
 };
 
-export default ExpenseCard;
+export default UpcomingExpenseCard;

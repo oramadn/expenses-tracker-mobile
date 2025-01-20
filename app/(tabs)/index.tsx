@@ -2,6 +2,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeHeader from '@/components/HomeHeader';
 import BudgetOverview from '@/components/BudgetOverview';
 import UpcomingExpenses from '@/components/UpcomingExpenses';
+import RecentTransactions from '@/components/RecentTransactions';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <HomeHeader />
       <BudgetOverview />
       <UpcomingExpenses />
+      <RecentTransactions />
     </SafeAreaView>
   );
 }
